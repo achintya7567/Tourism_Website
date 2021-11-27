@@ -1,0 +1,242 @@
+body{margin:0;}
+@font-face {
+	src: url(../assets/fonts/OpenSans-LightItalic.ttf);
+	font-family: Open Sans;
+}
+@font-face {
+	src: url(../assets/fonts/Acme-Regular.ttf);
+	font-family: Acme;
+}
+@font-face {
+	src: url(../assets/fonts/Comfortaa-Bold.ttf);
+	font-family: Comfortaa;
+}
+#home{
+	height: 100vh;
+	width: 100vw;
+	background-image: url(../assets/bg8.png);
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+section{
+	height: 85vh;
+	width: 50vw;
+	position: absolute;
+	top: 10vh;
+	left: 5vw;
+	background-color: rgba(250,250,250,0.7);
+	border-radius: 10px;
+	opacity: 0;
+	animation: open 1s 0.3s;
+	animation-fill-mode: forwards;
+}
+@keyframes open{
+	from{
+		top: 0;
+		opacity: 0;
+	}
+	to{
+		top: 10vh;
+		opacity: 1;
+	}
+}
+section > h2{
+	width: 100%;
+	text-align: center;
+	color: black;
+	font-family: Acme;
+	font-size: 40px;
+	margin: 30px 0 5px 0;
+	color: hsl(270,50%,40%);
+}
+#cross{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 1em;
+	max-width: 45vw;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.ifield {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #aaa;
+	height: 70px;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+
+.ifield:focus {
+	outline: none;
+}
+
+.ilabel {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: #6a7989;
+	font-weight: bold;
+	font-size: 18px;
+	user-select: none;
+	color: hsl(10,100%,55%);
+	font-family: Comfortaa;
+}
+label > span{
+	text-align: left;
+}
+.ilabel-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+	bottom: -0.3px;
+}
+.i-effect {
+	overflow: hidden;
+}
+
+.ifield-effect {
+	margin-top: 1em;
+	padding: 0.85em 0.15em;
+	width: 100%;
+	background: transparent;
+	color: #595F6E;
+}
+
+.ilabel-effect {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 0 0.25em;
+	width: 100%;
+	height: calc(100% - 1em);
+	text-align: left;
+	pointer-events: none;
+}
+
+.ilabel-content-effect {
+	position: absolute;
+}
+
+.ilabel-effect::before,
+.ilabel-effect::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 10px);
+	border-bottom: 1px solid rgba(150,150,150,0.8);
+}
+
+.ilabel-effect::after {
+	margin-top: 2px;
+	border-bottom: 4px solid red;
+	transform: translate3d(-100%, 0, 0);
+	transition: transform 0.3s;
+}
+
+.ilabel-effect-color-1::after {
+	border-color: hsl(205,75%,50%);
+}
+
+.ilabel-effect-color-2::after {
+	border-color: hsl(160, 100%, 50%);
+}
+
+.ilabel-effect-color-3::after {
+	border-color: hsl(20, 100%, 50%);
+}
+
+.ifield-effect:focus + .ilabel-effect::after,
+.input--filled .ilabel-effect::after {
+	transform: translate3d(0, 0, 0);
+}
+
+.ifield-effect:focus + .ilabel-effect .ilabel-content-effect,
+.input--filled .ilabel-content-effect {
+	animation: anim-1 0.3s forwards;
+}
+@keyframes anim-1 {
+	50% {
+		opacity: 0;
+		transform: translate3d(1em, 0, 0);
+	}
+	51% {
+		opacity: 0;
+		transform: translate3d(-1em, -40%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, -40%, 0);
+	}
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	font-family:open sans;
+	position: relative;
+	left: 20.5vw;
+	font-weight: 800;
+}
+#services{
+	position: absolute;
+	height: 85vh;
+	top: 10vh;
+	right: 5vw;
+	width: 35vw;
+	background-color: hsl(290,75%,50%);
+	border-radius: 10px; 
+	text-align: center;
+	color: white;
+	opacity: 0;
+	animation: open2 1s 1.3s;
+	animation-fill-mode: forwards;
+}
+@keyframes open2{
+	from{
+		opacity: 0;
+		top: 0;
+	}
+	to{
+		opacity: 0.8;
+		top: 10vh;
+	}
+}
+#services > h1{
+	font-family: Acme;
+	position: relative;
+	top: 60px;
+}
+#services > span{
+	position: relative;
+	top: 60px;
+	text-align: center;
+	width: inherit;
+	font-size: 20px;
+	padding: 5px;
+	font-family: Open Sans;
+}
